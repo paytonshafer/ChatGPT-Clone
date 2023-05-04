@@ -75,8 +75,21 @@ input:focus {
 
 .input-container #submit {
     position: absolute;
-    right: 0;
-    bottom: 15px;
+    right: -26px;
+    bottom: 6px;
+
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+
+    font-size: 30px;
+    line-height: 37.5px;
+    text-align: center;
+}
+
+.input-container #submit:hover{
+    background-color: rgba(255, 255, 255, 1);
+    color: #343541;
 }
 
 button {
@@ -87,11 +100,19 @@ button {
     margin: 10px;
 }
 
+button:hover {
+    background-color: #444654;
+}
+
 nav {
     border-top: solid 0.5px rgba(255, 255, 255, 0.5);
     padding: 10px;
     margin: 10px;
     text-align: center;
+}
+
+nav a {
+    text-decoration: none;
 }
 
 .history {
@@ -106,6 +127,10 @@ nav {
     list-style-type: none;
     padding: 15px 0;
     cursor: pointer;
+}
+
+.history li:hover{
+    background-color: #747474;
 }
 
 .feed {

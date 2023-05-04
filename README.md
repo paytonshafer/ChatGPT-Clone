@@ -1,5 +1,8 @@
 # Getting Started with Create React App
 
+FOR PAYTON BACKEND: npm run start:backend
+          FROTNEND: npm run start:frontend
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

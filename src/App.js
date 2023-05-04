@@ -38,7 +38,6 @@ const App = () => {
     }
 
     useEffect(() => {
-        console.log(curTitle, value, message)
         if(!curTitle && value && message){
             setCurTitle(value)
         }
@@ -58,11 +57,10 @@ const App = () => {
 
                 ]
             ))
+            setMessage('')
+            setValue('')
         }
-
-    }, [message, curTitle])
-
-    console.log(previousChats)
+    }, [message, curTitle, value])
 
     const curChat = previousChats.filter(previousChats => previousChats.title === curTitle)
     const titles = Array.from(new Set(previousChats.map(chat => chat.title)))
@@ -75,7 +73,7 @@ const App = () => {
                 {titles ? titles.map((title, index) => <li key={index} onClick={() => historyClick(title)}>{title}</li>) : null}
             </ul>
             <nav>
-                <p>Made by Payton</p>
+                <a href='https://github.com/paytonshafer'>Made by Payton</a>
             </nav>
         </section>
 
@@ -90,9 +88,9 @@ const App = () => {
             <div className="bottom-section">
                 <div className="input-container">
                     <input value={value} onChange={(e) => setValue(e.target.value)}/>
-                    <div id="submit" onClick={getMessages}>➢</div>
+                    <div id="submit" onClick={getMessages}>➠</div> {/*arrows: ➵ ➢ ➪ ➠ */}
                 </div>
-                <p className="info">ChatGPT March 23 Version</p>
+                <p className="info">Meet OpenAI's model GPT-3.5-turbo which can understand as well as generate natural language or code</p>
             </div>
         </section>
         </div>
