@@ -98,10 +98,13 @@ button {
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
+    font-size: 18px;
+    text-align: center;
 }
 
 button:hover {
-    background-color: #444654;
+    background-color: #ffffff;
+    color: #202123;
 }
 
 nav {
@@ -125,12 +128,27 @@ nav a {
 
 .history li {
     list-style-type: none;
-    padding: 15px 0;
+    padding: 12px 3px;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 5px;
+    align-items: center;
+    overflow: scroll;
 }
 
 .history li:hover{
     background-color: #747474;
+}
+
+.history li p{
+    margin: 0;
+}
+
+.history li button{
+    padding: 0 7px;
+    margin: 0;
 }
 
 .feed {

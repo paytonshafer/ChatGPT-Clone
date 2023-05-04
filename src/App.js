@@ -17,6 +17,13 @@ const App = () => {
         setMessage(null)
         setValue('')
     }
+
+    const xClick = (e) => {
+        e.stopPropagation();
+        let del_title = e.target.getAttribute('title')
+        setPreviousChats(previousChats.filter((previousChats => previousChats.title !== del_title)))
+        createNewChat()
+    }
     
     const getMessages = async () => {
         const options = {
@@ -45,12 +52,12 @@ const App = () => {
             setPreviousChats(prevChats => (
                 [...prevChats,
                     {
-                        title: curTitle,
+                        title: curTitle, //.len < 13 ? curTitle : curTitle.slice(0, 12) + '...',
                         role: 'user',
                         content: value
                     },
                     {
-                        title: curTitle,
+                        title: curTitle, //.len < 13 ? curTitle : curTitle.slice(0, 12) + '...',
                         role: message.role,
                         content: message.content
                     }
@@ -70,9 +77,14 @@ const App = () => {
         <section className="side-bar">
             <button onClick={createNewChat}>+ New chat</button>
             <ul className="history">
-                {titles ? titles.map((title, index) => <li key={index} onClick={() => historyClick(title)}>{title}</li>) : null}
+                {titles ? titles.map((title, index) => <li key={index} onClick={() => historyClick(title)}>
+                    <p>{title.length < 13 ? title : title.slice(0, 12) + '...'}</p>&nbsp;
+                    <button title={title} onClick={(e) => xClick(e)}>X</button>
+                </li>) : null}
             </ul>
             <nav>
+                <span>🌜</span>
+                <span>🌞</span>
                 <a href='https://github.com/paytonshafer'>Made by Payton</a>
             </nav>
         </section>
