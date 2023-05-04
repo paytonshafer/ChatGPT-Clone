@@ -83,8 +83,13 @@ const App = () => {
                 </li>) : null}
             </ul>
             <nav>
-                <span>🌜</span>
-                <span>🌞</span>
+                <label class="switch">
+                    <input type="checkbox"/>
+                    <span class="slider round">
+                        <span>🌞</span>
+                        <span>🌜</span>
+                    </span>
+                </label>
                 <a href='https://github.com/paytonshafer'>Made by Payton</a>
             </nav>
         </section>
