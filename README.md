@@ -10,7 +10,7 @@ This command will install all the needed packages and dependancies to run the pr
 ```sh
 cp .env.template .env
 ```
-This creates a .env file for your project. Now, open the .env file and put you API key where it says PLACE_YOUR_API_KEY_HERE. Now you are ready to start the project. You need to have two terminal windows open both in the same directory (the same one where you ran npm install) where one window is for the frontend and the other is for the backend. In the first terminal we will start the frontend by running:
+This creates a .env file for your project. Now, open the .env file and put you API key where it says PLACE_YOUR_API_KEY_HERE. Now you are ready to start the project. You need to have two terminal windows open both in the same directory (the same one where you ran npm install in) where one window is for the frontend and the other is for the backend. In the first terminal we will start the frontend by running:
 ```sh
 npm run start:frontend
 ```
