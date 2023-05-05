@@ -5,7 +5,7 @@ cp .env.template .env then add your apikey to it
 FOR PAYTON BACKEND: npm run start:backend
           FROTNEND: npm run start:frontend
 
-TODO:light/dark mode
+TODO: history to JSON, readme
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

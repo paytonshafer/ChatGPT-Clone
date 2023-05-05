@@ -5,6 +5,7 @@ const App = () => {
     const [message, setMessage] = useState(null)
     const [previousChats, setPreviousChats] = useState([])
     const [curTitle, setCurTitle] = useState(null)
+    const [light, setLight] = useState(false)
 
     const createNewChat = () =>{
         setMessage(null)
@@ -24,7 +25,7 @@ const App = () => {
         setPreviousChats(previousChats.filter((previousChats => previousChats.title !== del_title)))
         createNewChat()
     }
-    
+
     const getMessages = async () => {
         const options = {
             method: "POST",
@@ -73,7 +74,7 @@ const App = () => {
     const titles = Array.from(new Set(previousChats.map(chat => chat.title)))
 
     return (
-        <div className="App">
+        <div className={light ? "App light" : "App"}>
         <section className="side-bar">
             <button onClick={createNewChat}>+ New chat</button>
             <ul className="history">
@@ -83,11 +84,11 @@ const App = () => {
                 </li>) : null}
             </ul>
             <nav>
-                <label class="switch">
+                <label className="switch">
                     <input type="checkbox"/>
-                    <span class="slider round">
-                        <span>🌞</span>
-                        <span>🌜</span>
+                    <span onClick={() => setLight(!light)} className="slider round">
+                        <span className={light ? 'sun' : 'sun off'}>🌞</span>
+                        <span className={light ? 'moon off' : 'moon'}>🌜</span>
                     </span>
                 </label>
                 <a href='https://github.com/paytonshafer'>Made by Payton</a>
@@ -95,7 +96,7 @@ const App = () => {
         </section>
 
         <section className="main">
-            {curTitle ? <h1>{curTitle}</h1> : <h1>PaytonGPT</h1>}
+            {curTitle ? <h1>{curTitle}</h1> : <h1 className='title'>PaytonGPT</h1>}
             <ul className="feed">
                 {curChat ? curChat.map((mes, index) => <li key={index}>
                     <p className='role'>{mes.role}</p>
